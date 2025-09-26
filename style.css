@@ -1,0 +1,354 @@
+/* ===== Base Styles ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0 !important;
+  background: #f8f8f8;
+  color: #333;
+}
+
+/* ===== Header ===== */
+header {
+  background: linear-gradient(#D4AF37, #fff);
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2em;
+  color: #222;
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 1em;
+  color: #555;
+}
+
+/* ===== Container & Sections ===== */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #222;
+}
+
+/* ===== Grids ===== */
+.grid,
+.scroll-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* ===== Video Grid ===== */
+.video-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.video-grid::-webkit-scrollbar,
+.scroll-grid::-webkit-scrollbar,
+.subcategory-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.video-grid::-webkit-scrollbar-thumb,
+.scroll-grid::-webkit-scrollbar-thumb,
+.subcategory-wrapper::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.video-grid::-webkit-scrollbar-thumb:hover,
+.scroll-grid::-webkit-scrollbar-thumb:hover,
+.subcategory-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #b8932f;
+}
+
+.video-grid::-webkit-scrollbar-track,
+.subcategory-wrapper::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.scroll-grid::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+.video-grid .card {
+  flex: 0 0 250px;
+  min-width: 220px;
+}
+
+.video-grid iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  flex: 1 1 250px;
+  min-width: 220px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(145deg, #fff8dc, #fff);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #222;
+  transition: color 0.3s;
+}
+
+.card h3:hover {
+  color: #D4AF37;
+}
+
+.card p {
+  color: #555;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+/* ===== Buttons ===== */
+button {
+  padding: 10px 15px;
+  background: #D4AF37;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: #b8932f;
+  transform: scale(1.05);
+}
+
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 50px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 800px;
+  max-height: 90vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  box-sizing: border-box;
+  z-index: 1050;
+  display: block;
+}
+
+.modal-content iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.modal-content p,
+.modal-content li {
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* ===== Tips ===== */
+.tip {
+  font-style: italic;
+  color: #666;
+  margin-top: 15px;
+}
+
+/* ===== Products Section ===== */
+#products {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.subcategory-wrapper {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  transition: transform 0.2s ease-out;
+}
+
+.subcategory-title {
+  width: 90%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+  border-left: 4px solid #D4AF37;
+  padding-left: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#products .card {
+  flex: 0 0 220px;
+  background: linear-gradient(145deg, #fff, #fdf7e3);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+#products .card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(145deg, #fff8dc, #fff);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .grid,
+  .video-grid,
+  .scroll-grid,
+  .subcategory-wrapper {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+  }
+
+  .video-grid .card,
+  .scroll-grid .card,
+  #products .card,
+  .card {
+    flex: 0 0 180px;
+    padding: 15px;
+  }
+
+  #health-safety {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+  }
+
+  #health-safety .card {
+    flex: 0 0 180px;
+    max-height: 220px;
+    overflow: hidden;
+  }
+
+  .subcategory-title {
+    font-size: 1.3rem;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .disclaimer {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-grid .card,
+  .scroll-grid .card,
+  #products .card,
+  .card {
+    flex: 0 0 140px;
+    padding: 12px;
+  }
+
+  #health-safety .card {
+    flex: 0 0 140px;
+    max-height: 180px;
+  }
+
+  .subcategory-title {
+    font-size: 1.1rem;
+  }
+
+  button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .disclaimer {
+    font-size: 0.8rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .video-grid iframe {
+    height: 120px;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+}
